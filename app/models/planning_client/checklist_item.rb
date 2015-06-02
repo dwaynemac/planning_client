@@ -4,7 +4,7 @@ module PlanningClient
   class ChecklistItem < LogicalModel
     include PlanningClient::ServiceConfiguration
 
-    set_resource_path '/v0/checklist_items'
+    set_resource_url, PlanningClient::HOST, '/v0/checklist_items'
 
     attribute :id
     
@@ -16,6 +16,10 @@ module PlanningClient
 
     attribute :context_id
     attribute :context_type
+
+    def json_root
+      'checklist_item'
+    end
 
   end
 end

@@ -4,7 +4,7 @@ module PlanningClient
   class ToDo < LogicalModel
     include PlanningClient::ServiceConfiguration
 
-    set_resource_path '/v0/to_dos'
+    set_resource_url PlanningClient::HOST, '/v0/to_dos'
 
     attribute :id
 
@@ -50,6 +50,10 @@ module PlanningClient
       else
         nil
       end
+    end
+
+    def json_root
+      'to_do'
     end
    
     protected
