@@ -11,6 +11,13 @@ module PlanningClient
     attribute :daily_email_reminder_enabled
     attribute :username
 
+    def set_email_options(value)
+      if daily_email_reminder_enabled != value
+        self.daily_email_reminder_enabled = value
+        self.save
+      end
+    end
+
     def self.find_by_name (username)
       self.find(1, {username: username})
     end
