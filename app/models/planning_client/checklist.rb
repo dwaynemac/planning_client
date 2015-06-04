@@ -4,7 +4,7 @@ module PlanningClient
   class Checklist < LogicalModel
     include PlanningClient::ServiceConfiguration
 
-    set_resource_path '/v0/checklists'
+    set_resource_url PlanningClient::HOST, '/v0/checklists'
 
     attribute :id
     attribute :name
