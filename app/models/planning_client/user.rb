@@ -38,10 +38,6 @@ module PlanningClient
       end
     end
 
-    def self.find_by_name (username)
-      self.find(1, {username: username})
-    end
-
     def json_root
       'user'
     end
